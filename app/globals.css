@@ -18,16 +18,76 @@
 
 body {
   color: rgb(var(--foreground-rgb));
+  font-family: "Krasar",Arial, sans-serif;
   background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
+    to bottom,
+    transparent,
+    rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+  }
+  
+h2, label {
+  font-family: "Krasar";
+}
+
+select, span {
+  font-family: "Krasar-Regular";
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+@font-face {
+  font-family: "Krasar";
+  src: url("./../components/fonts/otf/Krasar-Black.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Krasar-Thin";
+  src: url("./../components/fonts/otf/Krasar-Thin.otf") format("opentype");
+}
+
+
+@font-face {
+  font-family: "Krasar-Regular";
+  src: url("./../components/fonts/otf/Krasar-Regular.otf") format("opentype");
+}
+/* @font-face {
+  font-family: "Krasar";
+  src: url("./../components/fonts/otf/Krasar-Bold.otf");
+}
+
+@font-face {
+  font-family: "Krasar";
+  src: url("./../components/fonts/otf/Krasar-Book.otf");
+}
+
+@font-face {
+  font-family: "Krasar";
+  src: url("./../components/fonts/otf/Krasar-ExtraLight.otf");
+}
+
+@font-face {
+  font-family: "Krasar";
+  src: url("./../components/fonts/otf/Krasar-Light.otf");
+}
+
+@font-face {
+  font-family: "Krasar";
+  src: url("./../components/fonts/otf/Krasar-Medium.otf");
+}
+
+
+@font-face {
+  font-family: "Krasar";
+  src: url("./../components/fonts/otf/Krasar-Thin.otf");
+} */
+
+.custom-gradient {
+  background: rgb(180,251,255);
+  background: linear-gradient(90deg, rgba(180,251,255,1) 0%, rgba(116,217,255,1) 59%, rgba(132,234,255,1) 100%);
 }
