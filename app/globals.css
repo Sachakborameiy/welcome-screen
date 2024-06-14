@@ -14,24 +14,28 @@
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
+  
 }
 
 body {
   color: rgb(var(--foreground-rgb));
   font-family: "Krasar",Arial, sans-serif;
-  background: linear-gradient(
+  background: #001A3D;
+  /* background: linear-gradient(90deg, rgba(180,251,255,1) 0%, rgba(116,217,255,1) 59%, rgba(132,234,255,1) 100%); */
+  
+  /* background: linear-gradient(
     to bottom,
     transparent,
     rgb(var(--background-end-rgb))
     )
-    rgb(var(--background-start-rgb));
+    rgb(var(--background-start-rgb)); */
   }
   
 h2, label {
   font-family: "Krasar";
 }
 
-select, span {
+select, span, div {
   font-family: "Krasar-Regular";
 }
 
@@ -88,6 +92,51 @@ select, span {
 } */
 
 .custom-gradient {
-  background: rgb(180,251,255);
-  background: linear-gradient(90deg, rgba(180,251,255,1) 0%, rgba(116,217,255,1) 59%, rgba(132,234,255,1) 100%);
+  /* background: rgb(180,251,255);
+  background: linear-gradient(90deg, rgba(180,251,255,1) 0%, rgba(116,217,255,1) 59%, rgba(132,234,255,1) 100%); */
+  background-image: url("/public/background.jpg");
+  background-size: cover;
 }
+
+@variants {
+  .animate-wave {
+    animation: wave 6s infinite;
+  }
+
+  .app-wave-google {
+    animation: wave 3s infinite;
+  } 
+  .app-wave-apple {
+    animation: wave 5.5s infinite;
+  } 
+  .app-wave-master {
+    animation: wave 4s infinite;
+  } 
+
+}
+
+@keyframes wave {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer keyframes {
+  @variants {
+    .animate-wave {
+      animation: wave 1s infinite;
+    }
+  }
+} */
+
+
