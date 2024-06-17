@@ -1,118 +1,115 @@
 "use client";
 import Image from 'next/image';
 import React, { useEffect } from 'react';
-
+import AnimateRobot from '@/components/custom/Rive';
+import { url } from 'inspector';
+// import Background from "../../public/ai-01.jpg";
 const WelcomePage: React.FC = () => {
+    function requestFullScreen() {
+        if (document.documentElement.requestFullscreen) {
+            document.documentElement.requestFullscreen();
+        } 
+        // else {
+        //     document.documentElement.exitFullscreen();
+        // }
+        // else if (document.documentElement?.webkitRequestFullscreen) {
+        //   document.documentElement.webkitRequestFullscreen();
+        // } else if (document.documentElement.mozRequestFullScreen) {
+        //   document.documentElement.mozRequestFullScreen();
+        // }
+    }
 
+    window.onmousedown = () => {
+        requestFullScreen()
+    }
+
+    window.onkeydown = (evt) => {
+        if (evt.key == "Enter") {
+            requestFullScreen();
+        } 
+        // console.log(evt);
+    }
     return (
-        <div className="w-screen h-screen flex flex-col custom-gradient">
-            {/* style={{ backgroundColor: "linear-gradient(90deg, rgba(39,233,243,1) 0%, rgba(120,120,222,1) 51%, rgba(0,212,255,1) 100%)" }} */}
-            {/* Container Row */}
+        <div className='relative max-w-[100%] bg-top-0 w-[100%] bg-cover'
+        style={{
+            // backgroundImage: `url('/background.jpg')`,
+            backgroundImage: `url('/ai-01.jpg')`,
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center',
+        }}
 
-            {/* <div 
-                className="flex-grow w-full"
-                style={{backgroundImage: "url('/background.jpg')", backgroundSize: "contain" }}
-            >
-                <canvas id="canvas"></canvas>
-            </div> */}
+        // style={{ backgroundImage: `url("/public/background.jpg")` }}
+        // style={{ backgroundImage: `url(${require("/public/background.jpg")})` }}
+        >
+            <div className="w-[2160px] h-[3840px] flex flex-col custom-gradient">
+                <div className='relative'>
+                    <AnimateRobot />
+                </div>
 
-            <div 
-                className="flex-grow w-full rounded-full "
-                style={{backgroundImage: "url('/background.jpg')", borderRadius: "50%", backgroundSize: "50% 100%", border: "none", backgroundRepeat: "no-repeat", backgroundPosition: "center" }}
-            >
-                {/* <canvas id="canvas"></canvas> */}
-                
-            </div>
+                {/* Footer */}
+                {/* 001A3D */}
+                <footer className="bg-[#d9dbdf] h-[50vh] flex items-center justify-center">
+                    <div className="p-0">
+                        {/* Your content here */}
+                        <div className="flex items-center justify-center mt-[-15em] w-[120em] ">
+                            <div className=''>
+                                <Image
+                                    src="/Logo-Acleda.png"
+                                    alt='welcome screen'
+                                    layout=''
+                                    objectFit='contain'
+                                    quality={100}
+                                    width={600}
+                                    height={600}
+                                    className='rounded-sm'
+                                />
+                            </div>
 
-            {/* Footer */}
-            <div className='m-auto w-full bg-[#001A3D]'>
-                <div className="relative bg-[#001A3D] h-48">
-                    <div className="grid place-items-center m-auto">
-                        <div className="absolute top-0">
-                            <div className='flex flex-row md:flex-row '>
-                                {/* left side */}
-                                <div className='pt-7'>
-                                    <Image
-                                        src="/Logo-Acleda.png"
-                                        alt='welcome screen'
-                                        layout='' // Set layout to responsive
-                                        objectFit='contain' // Adjust object fit as per your requirement
-                                        quality={100}
-                                        width={160}
-                                        height={160}
-                                        className='rounded-sm'
-                                    />
-                                </div>
-                                {/* end left side */}
+                            <div className='w-full p-4'>
+                                <div className=''>
+                                    <div className='w-full flex flex-row ml-4'>
+                                        <div className='uppercase text-black font-extrabold text-[5.5em]'>Acleda </div>
+                                        <div className='ml-4 text-[#f1a239] font-extrabold capitalize text-[5.5em]'>mobile</div>
+                                    </div>
+                                    <div className='flex mt-4 ml-4 '>
 
-                                {/* right side */}
-                                <div className='w-full p-4'>
-                                    <div className='p-4'>
-
-                                        <div className='w-full flex flex-row ml-4'>
-                                            <div className='uppercase text-white font-bold text-3xl'>Acleda </div>
-                                            <div className='ml-3 text-orange-400 font-bold capitalize text-3xl'>mobile</div>
+                                        <div className='bg-white p-10 rounded-lg w-[45em] app-wave-google shadow-4xl'>
+                                            <div className='flex '>
+                                                <Image
+                                                    src="/apple.png"
+                                                    alt='welcome screen'
+                                                    layout='' // Set layout to responsive
+                                                    objectFit='contain' // Adjust object fit as per your requirement
+                                                    quality={100}
+                                                    width={190}
+                                                    height={190}
+                                                    className='rounded-md'
+                                                />
+                                                <span className=''><span className="uppercase font-bold text-black pl-2 text-[3.5em]">get it on <br /></span><span className='font-bold text-black pl-2 text-[3em]'>Google Play</span></span>
+                                            </div>
                                         </div>
-                                        <div className='flex mt-4 ml-4 '>
 
-                                            <div className='bg-white p-2 rounded-md w-52 app-wave-google'>
-                                                <div className='h-12 flex '>
-                                                    <Image
-                                                        src="/apple.png"
-                                                        alt='welcome screen'
-                                                        layout='' // Set layout to responsive
-                                                        objectFit='contain' // Adjust object fit as per your requirement
-                                                        quality={100}
-                                                        width={40}
-                                                        height={40}
-                                                        className='rounded-md'
-                                                    />
-                                                    <span className=''><span className="uppercase font-bold text-black pl-2" style={{fontSize: "12px"}}>get it on <br /></span><span className='font-bold text-black pl-2' style={{fontSize: "16px"}}>Google Play</span></span>
-                                                </div>
+                                        <div className='bg-black p-10 rounded-lg ml-10 w-[45em] app-wave-apple shadow shadow-4xl'>
+                                            <div className=' flex ml-2'>
+                                                <Image
+                                                    src="/google-play.svg"
+                                                    alt='welcome screen'
+                                                    layout='' // Set layout to responsive
+                                                    objectFit='contain' // Adjust object fit as per your requirement
+                                                    quality={100}
+                                                    width={180}
+                                                    height={180}
+                                                    className='rounded-md'
+                                                />
+                                                <span className='ml-4'><span className="uppercase font-bold text-white pl-2 text-[3.5em]">download <br/> on the<br /></span><span className='font-bold text-white pl-2 text-[3em]'>App Store</span></span>
                                             </div>
-
-                                            <div className='bg-black p-2 rounded-md ml-4 w-52 app-wave-apple'>
-                                                <div className='h-12 flex ml-2'>
-                                                    <Image
-                                                        src="/google-play.svg"
-                                                        alt='welcome screen'
-                                                        layout='' // Set layout to responsive
-                                                        objectFit='contain' // Adjust object fit as per your requirement
-                                                        quality={100}
-                                                        width={40}
-                                                        height={40}
-                                                        className='rounded-md'
-                                                    />
-                                                    <span className='pl-4'><span className="uppercase text-sm font-bold text-white" style={{fontSize: "12px"}}>download on the <br /></span><span className='font-bold text-lg text-white' style={{fontSize: "16px"}}>App Store</span></span>
-                                                </div>
-                                            </div>
-
-                                            {/* <div className='bg-black p-2 rounded-md ml-4 w-52 app-wave-master'>
-                                                <div className='h-12 flex ml-2'>
-                                                    <Image
-                                                        src="/master-code.svg"
-                                                        alt='welcome screen'
-                                                        layout='' // Set layout to responsive
-                                                        objectFit='contain' // Adjust object fit as per your requirement
-                                                        quality={100}
-                                                        width={40}
-                                                        height={40}
-                                                        className='rounded-md'
-                                                    />
-                                                    <span className='pl-2'><span className="uppercase text-sm font-bold text-white" style={{fontSize: "12px"}}>Get it on the<br /></span><span className='font-bold text-lg text-white' style={{fontSize: "16px"}}>Master of Code</span></span>
-                                                </div>
-
-                                            </div> */}
-
                                         </div>
                                     </div>
                                 </div>
-                                {/* end right side */}
                             </div>
                         </div>
                     </div>
-                </div>
-
+                </footer>
             </div>
         </div>
     );

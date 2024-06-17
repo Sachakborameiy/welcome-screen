@@ -20,9 +20,14 @@
 body {
   color: rgb(var(--foreground-rgb));
   font-family: "Krasar",Arial, sans-serif;
-  background: #001A3D;
+  /* background: #001A3D; */
   /* background: linear-gradient(90deg, rgba(180,251,255,1) 0%, rgba(116,217,255,1) 59%, rgba(132,234,255,1) 100%); */
-  
+  /* width: 100%;
+  height: 100%;
+  background-image: url("/public/ai-01.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; */
   /* background: linear-gradient(
     to bottom,
     transparent,
@@ -91,23 +96,23 @@ select, span, div {
   src: url("./../components/fonts/otf/Krasar-Thin.otf");
 } */
 
-.custom-gradient {
-  /* background: rgb(180,251,255);
-  background: linear-gradient(90deg, rgba(180,251,255,1) 0%, rgba(116,217,255,1) 59%, rgba(132,234,255,1) 100%); */
+/* .custom-gradient {
+  background: rgb(180,251,255);
+  background: linear-gradient(90deg, rgba(180,251,255,1) 0%, rgba(116,217,255,1) 59%, rgba(132,234,255,1) 100%);
   background-image: url("/public/background.jpg");
   background-size: cover;
-}
+} */
 
 @variants {
   .animate-wave {
-    animation: wave 6s infinite;
+    animation: wave 5s infinite;
   }
 
   .app-wave-google {
     animation: wave 3s infinite;
   } 
   .app-wave-apple {
-    animation: wave 5.5s infinite;
+    animation: wave 4.5s infinite;
   } 
   .app-wave-master {
     animation: wave 4s infinite;
@@ -120,7 +125,7 @@ select, span, div {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-8px);
+    transform: translateY(-2em);
   }
   100% {
     transform: translateY(0);
